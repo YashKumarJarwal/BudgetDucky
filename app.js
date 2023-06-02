@@ -39,7 +39,9 @@ app.use(session({
   const userSchema = new mongoose.Schema({
     email:String,
     password:String,
-    name:String
+    fname:String,
+    lname:String,
+    mobile:String,
   })
   userSchema.plugin(passportLocalMongoose);
 
@@ -70,7 +72,63 @@ app.get("/logout", function(req, res){
         });
       })
 
-// app.post("/register", function(req, res){
+
+app.post("/register", async function(req, res){
+
+  const passwordHash=await bcrypt.hash(req.body.password,10);
+  
+const newUser=new User({username:req.body.username,
+  password:passwordHash,
+fname:req.body.fname,
+lname:req.body.lname,
+mobile:req.body.mobile
+
+});
+await newUser.save();
+res.redirect('/login');
+ });
+
+ app.post('/login',async (req,res)=>{
+        const user=await User.findOne({username:req.body.username});
+        const passMatch=await bcrypt.compare(req.body.password,user.password);
+        console.log(passMatch);
+        if(passMatch){
+          //authorization successful
+          res.redirect('/new');
+        }
+        else{
+          // authorization failed
+          res.redirect('/failure');
+        }
+        
+      })
+
+app.get("/", function(req, res){
+    res.render("home");
+  });
+
+app.get("/new", function(req, res){
+  res.render("new");
+});
+app.get("/dashboard", function(req, res){
+    res.render("dashboard");
+  });
+app.get("/login",function(req, res){
+    res.render("login")
+})
+app.get("/failure",function(req, res){
+    res.render("failure")
+})
+app.get("/register",function(req, res){
+    res.render("register")
+})
+
+app.listen(3000, function() {
+    console.log("Server started on port 3000");
+  });
+  
+
+  // app.post("/register", function(req, res){
 //         User.register({username:req.body.username}, req.body.password, function(err, user) {
 //         if (err) {
 //           console.log(err);
@@ -82,26 +140,6 @@ app.get("/logout", function(req, res){
 //         }
 //       });
 //       });
-
-app.post("/register", async function(req, res){
-
-  const passwordHash=await bcrypt.hash(req.body.password,10);
-const newUser=new User({username:req.body.username,
-  password:passwordHash,
-name:req.body.name
-});
-await newUser.save();
-res.redirect('/login');
-
-
-    
-    
-      });
-
-
-
-
-
 // app.post("/login", function(req, res){
 //         const user = new User({
 //           username : req.body.username,
@@ -130,43 +168,3 @@ res.redirect('/login');
 //   function(req, res) {
 //     res.redirect('/dashboard');
 //   });
-
-app.post('/login',async (req,res)=>{
-  const user=await User.findOne({username:req.body.username});
-  const passMatch=await bcrypt.compare(req.body.password,user.password);
-  console.log(passMatch);
-  if(passMatch){
-    //authorization successful
-    res.redirect('/new');
-  }
-  else{
-    // authorization failed
-    res.redirect('/failure');
-  }
-  
-})
-
-app.get("/", function(req, res){
-    res.render("home");
-  });
-
-app.get("/new", function(req, res){
-  res.render("new");
-});
-app.get("/dashboard", function(req, res){
-    res.render("dashboard");
-  });
-app.get("/login",function(req, res){
-    res.render("login")
-})
-app.get("/failure",function(req, res){
-    res.render("failure")
-})
-app.get("/register",function(req, res){
-    res.render("register")
-})
-
-app.listen(3000, function() {
-    console.log("Server started on port 3000");
-  });
-  

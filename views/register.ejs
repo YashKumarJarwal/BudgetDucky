@@ -1,5 +1,5 @@
 <%layout('layouts/boilerplate')%>
-<div class="container mt-5">
+<div class="container">
   <h1>Register</h1>
 
   <div class="row">
@@ -9,27 +9,71 @@
 
           <!-- Makes POST request to /register route -->
           <form action="/register" method="POST" noValidate class="mb-3 needs-validation" >
-            <div class="form-group">
-              <label for="email">Email</label>
+            <!-- field for first name -->
+
+            
+          
+            <div class="row">
+              <div class="col-6">
+
+                <div class="form-group mb-3">
+              
+                  <label for="password">First Name * </label>
+                  <input type="text" class="form-control" name="fname" required>
+                  <div class="invalid-feedback">
+                    Please enter your first name
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="col-6">
+
+                <div class="form-group mb-3">
+                  <label for="password">Last Name</label>
+                  <input type="text" class="form-control" name="lname">
+                  
+                </div>
+
+              </div>
+            </div>
+
+            
+           
+
+
+            <div class="form-group mb-3">
+              <label for="password">Mobile No *</label>
+              <input type="text" class="form-control" name="mobile" required>
+              <div class="invalid-feedback">
+                Please enter your Mobile No
+              </div>
+              
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="email">Email *</label>
               <input type="email" class="form-control" name="username" required>
               <div class="invalid-feedback">
                 Please enter your username
               </div>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
+            <div class="form-group mb-3">
+              <label for="password">Password *</label>
               <input type="password" class="form-control" name="password" required>
               <div class="invalid-feedback">
                 Please enter your password
               </div>
             </div>
-            <div class="form-group">
-              <label for="password">Name</label>
-              <input type="text" class="form-control" name="name" required>
+
+            <div class="form-group mb-3">
+              <label for="password">Confirm Password *</label>
+              <input type="password" class="form-control" name="password2" required>
               <div class="invalid-feedback">
-                Please enter your name
+                Please re-enter your password
               </div>
             </div>
+            
            
             <button type="submit" class="btn btn-dark mt-3">Register
             <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> -->
@@ -54,5 +98,13 @@
 
   </div>
 </div>
+
+<!-- 
+first name 
+last Name #not required
+phone no
+email
+password -->
+
 
 
