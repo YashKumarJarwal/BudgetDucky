@@ -115,6 +115,9 @@ app.get("/new/:username", async function(req, res){
 app.get("/dashboard", function(req, res){
     res.render("dashboard");
   });
+  app.get("/addExpense", function(req, res){
+    res.render("addExpense");
+  });
 app.get("/login",function(req, res){
     res.render("login")
 })
