@@ -1,4 +1,19 @@
-<%layout('layouts/boilerplate2')%>
-<!-- <%- include('./partials/dashboard-header')%> -->
-<h1>Welcome</h1>
+<%layout('layouts/boilerplate')%>
+<h1 class="display-3 text-center">Welcome to your DashBoard</h1>
 
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-4"><h4>Current Balance</h4></div>
+        <div class="col-4"><h4>Savings Done</h4></div>
+        <div class="col-4"><h4>Total Expenditure</h4></div>
+    </div>
+    <div class="row">
+        <div class="col-4"><h4>10000</h4></div>
+        <div class="col-4"><h4>3000</h4></div>
+        <div class="col-4"><h4>4000</h4></div>
+    </div>
+</div>
+<div class="container text-center">
+    <button class="btn btn-success mx-2 my-4">Add Salary</button>
+    <button class="btn btn-danger mx-2 my-4">Add Expenditure</button>
+</div>
