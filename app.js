@@ -94,7 +94,7 @@ res.redirect('/login');
         console.log(passMatch);
         if(passMatch){
           //authorization successful
-          res.redirect('/new');
+          res.redirect(`/new/${user.username}`);
         }
         else{
           // authorization failed
@@ -107,7 +107,9 @@ app.get("/", function(req, res){
     res.render("home");
   });
 
-app.get("/new", function(req, res){
+app.get("/new/:username", async function(req, res){
+  // const user=await User.findOne({username:req.body.params.username});
+  console.log(req.body);
   res.render("new");
 });
 app.get("/dashboard", function(req, res){
