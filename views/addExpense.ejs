@@ -1,2 +1,79 @@
 <%layout('layouts/boilerplate')%>
-<h1>Hello form addExpense</h1>
+<h2>Add Your Expense</h2>
+<form action="">
+    <div class="row my-2">
+        <div class="form-group col-md-6">
+            <label for="expenseType">Expense Name</label>
+            <input type="text" class="form-control" id="expenseType" aria-describedby="expenseType" placeholder="Expense Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" aria-describedby="amount" placeholder="Amount">
+          </div>
+    </div>
+    <div class="row my-2">
+        <div class="form-group col-md-6">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" aria-describedby="date" placeholder="Date">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="PaymentMethod">Payment Method</label>
+            <select class="form-control" id="PaymentMethod">
+            <option>Debit Card</option>
+            <option>Credit Card</option>
+            <option>UPI</option>
+            <option selected>Cash</option>
+            <option>Bank Transfer</option>
+            </select>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="form-group col-md-6">
+            <label for="Category">Category</label>
+            <select class="form-control" id="Category">
+                <option>Food & Dining</option>
+                <option>Transportation</option>
+                <option>Housing</option>
+                <option>Entertainment</option>
+                <option>Healthcare</option>
+                <option>Other</option>
+                </select>
+          </div>
+        <div class="form-group  col-md-6">
+            <label for="Tags">Tags</label>
+            <select class="form-control" id="Tags">
+                <option>Personal</option>
+                <option>Business</option>
+                <option>Travel</option>
+                <option>Other</option>
+                </select>
+          </div>
+    </div>
+      
+    <div class="form-group my-2">
+      <label for="expenseDesc">Expense Description</label>
+      <textarea rows="2" cols="10" name="expenseDesc"  id='expenseDesc' class="form-control" placeholder="Description of expense"></textarea>
+    </div>
+
+    <div class="form-group my-2">
+        <label for="expenseType">Last Question!!</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                This expense was necessary
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              I could have saved this money
+            </label>
+          </div>
+    </div>
+
+    <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>

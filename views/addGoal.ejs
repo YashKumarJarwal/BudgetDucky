@@ -1,0 +1,78 @@
+<%layout('layouts/boilerplate')%>
+<h2>Lets set a Goal</h2>
+
+<form action="">
+    <div class="row my-2">
+        <div class="form-group col-md-6">
+            <label for="goalDesc">Goal Name</label>
+            <input type="text" class="form-control" id="goalDesc" aria-describedby="goalDesc"
+                placeholder="Save for a Vacation">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="amount">Target Amount</label>
+            <input type="number" class="form-control" id="amount" aria-describedby="amount"
+                placeholder="Amount">
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="form-group col-md-6">
+            <label for="date">Target Date</label>
+            <input type="date" class="form-control" id="date" aria-describedby="date"
+                placeholder="Date">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Priority">Priority Level</label>
+            <select class="form-control" id="Priority">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="row my-2">
+        <div class="form-group  col-md-6">
+            <label for="Frequency">Contribution Frequency</label>
+            <select class="form-control" id="Frequency">
+                <option>Monthly</option>
+                <option>Bi-weekly</option>
+                <option>Quarterly</option>
+                <option>One Time</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="ContributionAmount">Contribution Amount</label>
+            <input type="number" class="form-control" id="ContributionAmount" aria-describedby="ContributionAmount"
+                placeholder="Contribution Amount">
+        </div>
+    </div>
+    <div class="form-group my-2">
+        <label for="notes">Goal Description</label>
+        <textarea rows="2" cols="10" name="notes" id='notes' class="form-control"
+            placeholder="Description of Goal"></textarea>
+    </div>
+
+    <div class="form-group my-2">
+        <label for="progress">Do you want to track your progress andreceive notifications for this goal</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Yes
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                No
+            </label>
+        </div>
+    </div>
+
+    <!-- <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div> -->
+    <button type="submit" class="btn btn-success">Add Goal</button>
+</form>

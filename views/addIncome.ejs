@@ -1,0 +1,97 @@
+<%layout('layouts/boilerplate')%>
+<h2>Add Income</h2>
+    <form action="">
+        <div class="row my-2">
+            <div class="form-group col-md-6">
+                <label for="incomeName">Income Name</label>
+                <input type="text" class="form-control" id="incomeName" aria-describedby="incomeName"
+                    placeholder="Income Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="amount">Amount</label>
+                <input type="number" class="form-control" id="amount" aria-describedby="amount"
+                    placeholder="Amount">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="form-group col-md-6">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" aria-describedby="date"
+                    placeholder="Date">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="PaymentMethod">Payment Method</label>
+                <select class="form-control" id="PaymentMethod">
+                    <option>Direct Deposit</option>
+                    <option>Check</option>
+                    <option>UPI</option>
+                    <option selected>Cash</option>
+                    <option>Bank Transfer</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="row my-2">
+            <div class="form-group col-md-6">
+                <label for="IncomeSource">Income Source</label>
+                <select class="form-control" id="IncomeSource">
+                    <option>Salary</option>
+                    <option>Freelance Work</option>
+                    <option>Investments</option>
+                    <option>Rent</option>
+                    <option>Side Gig</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group  col-md-6">
+                <label for="Frequency">Frequency</label>
+                <select class="form-control" id="Frequency">
+                    <option>Monthly</option>
+                    <option>Bi-weekly</option>
+                    <option>Quarterly</option>
+                    <option>One Time</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="form-group col-md-6">
+                <label for="Tags">Tags</label>
+                <select class="form-control" id="Tags">
+                    <option>Primary Income</option>
+                    <option>Passive Income</option>
+                    <option>Business Income</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="incomeDesc">Income Description</label>
+            <textarea rows="2" cols="10" name="incomeDesc" id='incomeDesc' class="form-control"
+                placeholder="Description of income"></textarea>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="expenseType">Were taxes withheld with this income</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    No
+                </label>
+            </div>
+        </div> -->
+
+    <div class="form-check my-2">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Taxes were withheld with this income</label>
+    </div>
+        <button type="submit" class="btn btn-success">Add Income</button>
+    </form>

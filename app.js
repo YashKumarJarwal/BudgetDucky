@@ -118,6 +118,12 @@ app.get("/dashboard", function(req, res){
   app.get("/addExpense", function(req, res){
     res.render("addExpense");
   });
+app.get('/addIncome',(req,res)=>{
+  res.render("addIncome");
+})
+app.get('/addGoal',(req,res)=>{
+  res.render("addGoal");
+})
 app.get("/login",function(req, res){
     res.render("login")
 })
