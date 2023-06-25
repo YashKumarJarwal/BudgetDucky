@@ -46,11 +46,14 @@ Intuitive and user-friendly interface for seamless navigation and enhanced user 
 
 - HTML5
 - CSS
-- BootStrap 
+- Bootstrap 
 - JavaScript
 - Node.js
-- Express.js
+- Express
 - MongoDB
+- Mongoose
+- EJS
+- PassportJS
 
 
 
